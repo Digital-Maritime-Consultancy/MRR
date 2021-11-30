@@ -1,4 +1,0 @@
-<MCP-MRN> = "urn" ":" "mrn" ":" "mcp" ":" <MCP-TYPE> ":" <IPID> ":" <IPSS>
-<MCP-TYPE> = "device" / "org" / "user" / "vessel" / "service"
-<IPID> = (alphanum) 0*20((alphanum) / "-") (alphanum) ; Identity provider ID
-<IPSS> = pchar *(pchar / "/") ; Identity provider specific string
