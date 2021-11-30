@@ -33,10 +33,12 @@ jobs:
           additional-extensions: txt
           
       - run: |
+          mv sitemap.xml sitemap.xml.tmp
           git config user.email mrr-bot@dmc.international
           git config user.name mrr-bot
           git fetch
           git checkout sitemap
+          mv sitemap.xml.tmp sitemap.xml
           git add sitemap.xml
           if [[ -z $(git --no-pager diff HEAD) ]]; then exit 0; fi
           git commit -m "New sitemap.xml"
