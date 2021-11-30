@@ -30,6 +30,7 @@ jobs:
         with:
           # The url of your webpage
           base-url-path: https://raw.githubusercontent.com/Digital-Maritime-Consultancy/MRR/main/
+          additional-extensions: txt
           
       - run: |
           git config user.email mrr-bot@dmc.international
