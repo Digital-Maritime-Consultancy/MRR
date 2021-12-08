@@ -32,15 +32,22 @@ jobs:
           base-url-path: https://raw.githubusercontent.com/Digital-Maritime-Consultancy/MRR/main/
           additional-extensions: txt
           
+      - name: generate-mrn-map
+        uses: Digital-Maritime-Consultancy/MRR_action@0.0.1
+        with:
+          base-url-path: https://raw.githubusercontent.com/Digital-Maritime-Consultancy/MRR/main/
+            
       - run: |
           mv sitemap.xml sitemap.xml.tmp
+          mv mrn-map.json mrn-map.json.tmp
           git config user.email mrr-bot@dmc.international
           git config user.name mrr-bot
           git fetch
           git checkout sitemap
           mv sitemap.xml.tmp sitemap.xml
-          git add sitemap.xml
+          mv mrn-map.json.tmp mrn-map.json
+          git add sitemap.xml mrn-map.json
           if [[ -z $(git --no-pager diff HEAD) ]]; then exit 0; fi
-          git commit -m "New sitemap.xml"
+          git commit -m "New sitemaps"
           git push
         shell: bash
