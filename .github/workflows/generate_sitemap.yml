@@ -33,7 +33,7 @@ jobs:
           additional-extensions: txt
           
       - name: generate-mrn-map
-        uses: Digital-Maritime-Consultancy/MRR_action@0.0.2
+        uses: Digital-Maritime-Consultancy/MRR_action@0.0.3
         with:
           base-url-path: https://raw.githubusercontent.com/Digital-Maritime-Consultancy/MRR/main/
             
